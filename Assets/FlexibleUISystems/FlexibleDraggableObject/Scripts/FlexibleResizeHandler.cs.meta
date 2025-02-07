@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: 7aef07b466dc2154ea85c278d29042b6
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 27290
+  packageName: Flexible Draggable & Resizable UI Object
+  packageVersion: 1.0
+  assetPath: Assets/FlexibleUISystems/FlexibleDraggableObject/Scripts/FlexibleResizeHandler.cs
+  uploadId: 45625

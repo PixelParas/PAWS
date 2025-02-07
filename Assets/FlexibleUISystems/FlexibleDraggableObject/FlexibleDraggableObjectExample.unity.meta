@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: b148cdb280588a8408f2a6bbc1ba9544
+DefaultImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 27290
+  packageName: Flexible Draggable & Resizable UI Object
+  packageVersion: 1.0
+  assetPath: Assets/FlexibleUISystems/FlexibleDraggableObject/FlexibleDraggableObjectExample.unity
+  uploadId: 45625
