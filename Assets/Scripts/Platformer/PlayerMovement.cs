@@ -17,11 +17,17 @@ public class PlayerMovement : MonoBehaviour
         controller = GetComponent<CharacterController2D>();
     }
 
-    public void moveForward(){
+    public void MoveForward(){
         horizontalMove = runSpeed;
     }
-    public void moveBackward(){
+    public void MoveBackward(){
         horizontalMove = -runSpeed;
+    }
+    public void Stop(){
+        horizontalMove = 0;
+    }
+    public void Jump(){
+        jump = true;
     }
     // Update is called once per frame
     void Update()
@@ -29,9 +35,9 @@ public class PlayerMovement : MonoBehaviour
         //horizontalMove = Input.GetAxisRaw("Horizontal") * runSpeed;
         anim.SetFloat("speed", Mathf.Abs(rb.linearVelocityX));
         anim.SetFloat("verticalSpeed", rb.linearVelocityY);
-        if(Input.GetButtonDown("Jump")){
+        /*if(Input.GetButtonDown("Jump")){
             jump = true;
-        }
+        }*/
 
         if(Input.GetKeyDown(KeyCode.C)){
             crouch = true;

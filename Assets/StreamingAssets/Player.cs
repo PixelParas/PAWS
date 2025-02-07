@@ -6,12 +6,12 @@ public class Player : MonoBehaviour
     // Start is called once when you Run
     void Start()
     {
-        player = GameObject.FindGameObjectsWithTag("Player")[0].GetComponent<PlayerMovement>();
+        player = GetComponent<PlayerMovement>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        player.MoveForward();
+        player.Jump();
     }
-}
+}
