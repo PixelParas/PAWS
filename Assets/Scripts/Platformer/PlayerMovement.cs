@@ -1,3 +1,4 @@
+using JetBrains.Annotations;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
@@ -9,6 +10,14 @@ public class PlayerMovement : MonoBehaviour
     bool crouch = false;
     public Animator anim;
     public Rigidbody2D rb;
+
+public LayerMask obstacleLayer;
+public float checkDistance;
+    public float distanceToWall;
+    public   float distanceToHole;
+
+    public Transform head;
+    public Transform knees;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {   
@@ -35,6 +44,7 @@ public class PlayerMovement : MonoBehaviour
         //horizontalMove = Input.GetAxisRaw("Horizontal") * runSpeed;
         anim.SetFloat("speed", Mathf.Abs(rb.linearVelocityX));
         anim.SetFloat("verticalSpeed", rb.linearVelocityY);
+CheckDistances();   
         /*if(Input.GetButtonDown("Jump")){
             jump = true;
         }*/
@@ -56,4 +66,17 @@ public class PlayerMovement : MonoBehaviour
     public void isCrouching(bool isCrouching){
         anim.SetBool("IsCrouching", isCrouching);
     }
+
+    void CheckDistances()
+    {
+        // Cast a ray from the head to detect a wall
+        RaycastHit2D wallHit = Physics2D.Raycast(head.position, transform.right);
+        RaycastHit2D holeHit = Physics2D.Raycast(knees.position, transform.right);
+        distanceToWall = wallHit.distance;
+        distanceToHole = holeHit.distance;
+        // Debugging rays (optional)
+        Debug.DrawRay(head.position, transform.right * checkDistance, Color.red);  // Ray for wall detection
+        Debug.DrawRay(knees.position, transform.right * checkDistance, Color.blue); // Ray for hole detection
+    }
+
 }
